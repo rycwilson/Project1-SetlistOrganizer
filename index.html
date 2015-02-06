@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+  <title>Project 1 - Setlist Organizer</title>
+</head>
+<body>
+
+  <div class="container-fluid">
+
+    <div class="page-header">
+      <h1>Setlist Organizer v0.1 <small>"Dude, what are the words?"</small></h1>
+    </div>
+
+    <!--  This is the Dropdown for actions when a Session is not yet open (new session, open existing) -->
+    <div id="session_noopen" class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="session_noopen_button" data-toggle="dropdown" aria-expanded="true">
+        Start a Jam Session
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="session_noopen_button">
+        <li id="new_jam_session" role="presentation"><a role="menuitem" tabindex="-1" href="#">New jam session</a></li>
+        <li id="open_existing" role="presentation"><a role="menuitem" tabindex="-1" href="#">Open existing</a></li>
+      </ul>
+    </div>
+
+    <!-- This is the Dropdown for OPEN Session actions (add song, remove song, save and close) -->
+    <div id="session_open" class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="session_open_button" data-toggle="dropdown" aria-expanded="true">
+        Session is open
+        <span class="caret" style="display: inline-block"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="session_open_button">
+        <li id="add_new_song" role="presentation"><a role="menuitem" tabindex="-1" href="#">Add new song</a></li>
+        <li id="add_existing_song" role="presentation"><a role="menuitem" tabindex="-1" href="#">Add existing song</a></li>
+        <li id="save_and_close" role="presentation"><a role="menuitem" tabindex="-1" href="#">Save and close</a></li>
+      </ul>
+    </div>
+
+    <form class="new_session_form" action="javascript:void(0)">
+      <label for="new_session_input">New jam session name: </label>
+      <input type="text" id="new_session_input" placeholder="session name" value="">
+      <input type="submit" value="Let's jam!">
+    </form>
+
+    <form class="existing_session_form" action="javascript:void(0)">
+      <datalist id="existing_sessions">
+      </datalist>
+      <label for="existing_session_dropdown">Which session? </label>
+      <input list="existing_sessions" type="text" id="existing_session_dropdown" placeholder="session name" value ="">
+      <input type="submit" value="Open">
+    </form>
+
+    <form class="new_song_form" action="javascript:void(0)">
+      <label for="artist">Artist: </label>
+      <input type="text" id="artist" placeholder="artist name" value="">
+      <label for="song">Song: </label>
+      <input type="text" id="song" placeholder="song name" value="">
+      <input type="submit" value="Add">
+    </form>
+
+    <form class="existing_song_form" action="javascript:void(0)">
+      <datalist id="existing_songs">
+      </datalist>
+      <label for="existing_songs_dropdown">Song: </label>
+      <input list="existing_songs" type="text" id="existing_songs_dropdown" placeholder="song name" value="">
+      <input type="submit" value="Add">
+    </form>
+
+    <p class="display_open_session"></p>
+
+    <hr>
+
+    <div class="row">
+
+      <!-- column 1 -->
+      <div class="col-md-3">  <!-- column 1 -->
+
+        <ul class="song_list" style="font-size: 14px; display: inline-block">
+        </ul>
+
+        <hr>
+
+        <form class="search_form" action="javascript:void(0)">
+          <label for="search_artist">Artist: </label>
+          <input type="text" id="search_artist" placeholder="artist" value="">
+          <br><br>
+          <label for="search_song">Song: </label>
+          <input type="text" id="search_song" placeholder="song" value="">
+          <br><br>
+          <input type="submit" value="Search">
+        </form>
+
+      </div>  <!-- column 1 -->
+
+      <div class="col-md-9">  <!-- column 2 -->
+        <div style="overflow:hidden">
+          <iframe class="iframe" src="">
+          </iframe>
+        </div>
+      </div>  <!-- column 2 -->
+
+    </div>  <!-- row -->
+
+  </div> <!-- container-fluid -->
+
+</body>
+</html>
