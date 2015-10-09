@@ -94,7 +94,7 @@ function currentSessionIndex(jamSessions, session) {
 //
 // Upon opening an existing jam session, populateSessionSongs
 // pulls that session's setlist from the central jamSessions
-// repository and loads the setlist into the .song_list <ul>
+// repository and loads the setlist into <ul class="song_list">
 //
 function populateSessionSongs(jamSessions, session) {
   var sessionIndex = currentSessionIndex(jamSessions, session);

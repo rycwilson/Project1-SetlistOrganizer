@@ -6,7 +6,15 @@
   display: inline-block;
 }
 
+.page-header {
+  background-color: #A9E2F3;
+  padding-top: 1px;
+  padding-left: 5px;
+}
+
 .search_form {
+  margin-top: 15px;
+  margin-left: 5px;
   font-family: sans-serif;
 }
 
@@ -43,7 +51,6 @@
   display: inline;
   font-size: 20px;
   margin-left: 20px;
-  color: blue;
 }
 
 .iframe {
